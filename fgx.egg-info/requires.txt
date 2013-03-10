@@ -1,9 +1,11 @@
 Pylons
 SQLAlchemy
+geopy
+PyProj
 gdal==1.6.3
 GeoAlchemy
 geojson
-geopy
+
 Numpy
-PyProj
+
 shapely
