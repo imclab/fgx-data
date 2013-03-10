@@ -6,12 +6,14 @@
 from sqlalchemy import  Integer, String, Date, DateTime
 from geoalchemy import  Column, GeometryColumn, GeometryDDL, Point, Polygon, MultiPoint, LineString
 from geoalchemy.postgis import PGComparator
-from shapely import wkb
+
 
 from sqlalchemy import  Integer, String, Date, DateTime, Column
 from sqlalchemy.dialects.postgresql import ARRAY
 from fgx.model.meta import Sess, Base
 
+if not os.environ.get('__GEN_DOCS__', None):
+	from shapely import wkb	
 
 FGX_SRID = 3857
 

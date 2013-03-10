@@ -4,7 +4,7 @@ geopy
 PyProj
 Numpy
 shapely
-gdal==1.6.3
+gdal
 GeoAlchemy
 geojson
 
