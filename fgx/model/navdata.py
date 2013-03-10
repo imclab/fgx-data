@@ -3,6 +3,7 @@
 #
 # @warning Required postgis
 
+import os 
 from sqlalchemy import  Integer, String, Date, DateTime
 from geoalchemy import  Column, GeometryColumn, GeometryDDL, Point, Polygon, MultiPoint, LineString
 from geoalchemy.postgis import PGComparator
