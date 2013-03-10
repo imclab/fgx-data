@@ -13,3 +13,4 @@ fgx.config
    :undoc-members:
    :inherited-members:
    :show-inheritance:
+	   

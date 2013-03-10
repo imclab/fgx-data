@@ -12,15 +12,14 @@ FGx API
 ============================
 .. toctree::
    
+	config
 	model
-  
+	
+
       
-============================
-Credits
-============================
-   
-.. automodule:: fgx
-   :members:
+TODO list
+---------
+.. todolist::
    
      
     

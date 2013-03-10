@@ -9,29 +9,48 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-__all__ = ['Base', 'Sess']
+#__all__ = ['Base', 'Sess']
 
-##@brief A class to hold the database connections, sessions and metadata; currently three.....
 class DbConnectionsContainer():
+	"""A class to hold the database connections, sessions and metadata
 	
-	## Constructor
+		.. note::
+			This class is a container that is passed around
+	"""
 	def __init__(self):
 		
-		## postgis database with navigation data
+		
 		self.navdata = None
+		""".. attribute:: Navdata and "postgis" database with navigation data imported and processed
 		
-		## users info and profile, shared data etc
+			.. note:: This is expected to be a readonly 'spacial' data, eg postgis
+		"""
+		
+		
 		self.users = None
+		""".. attribute:: Users info and profile, shared data etc
 		
-		## tracker and multiplayer
+			.. note:: Read and Write DB and user authenticalion, meta etc
+		"""
+		
+		
 		self.mpnet = None
+		""".. attribute:: Tracker and multiplayer database
 		
+			.. note:: Fast writes by webserver of data, and crossfeed
+		"""
 		
 		
 ##@brief The sqlalchemy database Sessions/connecctions
 #
 # @see fgx.model.init_model()
 Sess = DbConnectionsContainer()
+""" The sqlalchemy database Sessions/connections instance of :py:func:`fgx.model.meta.DbConnectionsContainer`
+	
+	These are scoped_session's that are passed around
+	
+	.. seealso:: :py:func:`fgx.model.init_model`   
+"""
 Sess.navdata = scoped_session(sessionmaker())
 Sess.users = scoped_session(sessionmaker())
 Sess.mpnet = scoped_session(sessionmaker())

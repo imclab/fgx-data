@@ -61,21 +61,38 @@ GeometryDDL(AirwaySegment.__table__)
 	
 ##################################################
 class Airport(Base.navdata):
+	"""The <b>Airport<b> represent the airport from the DB
 	
+		.. todo:: Make this work
+	"""
 	__tablename__ = "airport"
 	
 	apt_pk = Column(Integer(), primary_key=True)
+	"""The primary key for this database record"""
+	
 	apt_ident = Column(String(8), index=True)
+	"""The ICAO ident or alike """
+	
 	apt_local_code = Column(String(8), index=True, nullable=True)
+	"""The IATA ident or alike """
 	
 	apt_name_ascii = Column(String(255), index=True, nullable=True)
+	"""Airport name and description """
+	
 	apt_name_utf8 = Column(String(255), index=True, nullable=True)
 	
 	apt_country = Column(String(8), nullable=True)
+	
+	
 	apt_type = Column(String(50), nullable=True)
+	"""Airport Type"""
 	
 	apt_elev_ft = Column(String(32), nullable=True)
+	"""Elevation if feet
+	  
+	"""
 	apt_elev_m = Column(String(32), nullable=True)
+	
 	apt_authority = Column(String(32), nullable=True)
 	apt_services = Column(String(1), nullable=True)
 	apt_ifr = Column(String(1), nullable=True)
@@ -119,29 +136,7 @@ class Airport(Base.navdata):
 GeometryDDL(Airport.__table__)
 
 
-	
-##################################################
-class Aero(Base.navdata):
-	
-	__tablename__ = "aircraft"
-	
-	aero_pk = Column(Integer(), primary_key=True) 
-	#manufacturers = models.Remotekey()
-	
-	model = Column(String(10), unique=True, index=True)
-	type_designator = Column(String(10))
-	
-	engines = Column(Integer())
-	engine_type = Column(String(1))
-	
-	weight_class = Column(String(40))
-	
-	climb_rate_fpm = Column(String(40))
-	descent_rate_fpm = Column(String(40))
-	
-	srs = Column(String(40))
-	lahso = Column(Integer())
-	
+
 	
 	
 ##################################################
