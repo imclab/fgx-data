@@ -1,3 +1,7 @@
+
+__version__ = "fgx-data-01"
+__author__ = "Pedro"
+
 ##@package fgx
 # @brief The pylons wsgi web service
 #
