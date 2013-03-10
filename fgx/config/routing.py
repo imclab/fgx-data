@@ -40,19 +40,19 @@ def make_map(config):
 	##=======================================================================
 	
 	# Airports
-	map.connect('/ajax/airports/icao/{a1}/{a2}/{a3}/{a4}', controller="ajax_airports", action="airports_icao")
-	map.connect('/ajax/airports/icao/{a1}/{a2}/{a3}', controller="ajax_airports", action="airports_icao")
-	map.connect('/ajax/airports/icao/{a1}/{a2}', controller="ajax_airports", action="airports_icao")
-	map.connect('/ajax/airports/icao/{a1}', controller="ajax_airports", action="airports_icao")
+	map.connect('/airports/icao/{a1}/{a2}/{a3}/{a4}', controller="ajax_airports", action="airports_icao")
+	map.connect('/airports/icao/{a1}/{a2}/{a3}', controller="ajax_airports", action="airports_icao")
+	map.connect('/airports/icao/{a1}/{a2}', controller="ajax_airports", action="airports_icao")
+	map.connect('/airports/icao/{a1}', controller="ajax_airports", action="airports_icao")
 	
-	map.connect('/ajax/airports', controller="ajax_airports", action="airports")
-	map.connect('/ajax/airport/{apt_ident}', controller="ajax_airports", action="airport")
-	map.connect('/ajax/airport/{apt_ident}/metar', controller="ajax_airports", action="airport_metar")
-	map.connect('/ajax/airport/{apt_ident}/tree', controller="ajax_airports", action="airport_tree")
+	map.connect('/airports', controller="ajax_airports", action="airports")
+	map.connect('/airport/{apt_ident}', controller="ajax_airports", action="airport")
+	map.connect('/airport/{apt_ident}/metar', controller="ajax_airports", action="airport_metar")
+	map.connect('/airport/{apt_ident}/tree', controller="ajax_airports", action="airport_tree")
 	
 	# Airway
-	map.connect('/ajax/airways', controller="ajax_navaids", action="airways")
-	map.connect('/ajax/airway/{awy}', controller="ajax_navaids", action="airway")
+	map.connect('/airways', controller="ajax_navaids", action="airways")
+	map.connect('/airway/{awy}', controller="ajax_navaids", action="airway")
 
 	
 		
@@ -60,21 +60,21 @@ def make_map(config):
 	# Developer
 	##=======================================================================
 	## Database
-	map.connect('/ajax/dev/databases', controller="ajax_dev", action="db_databases")
-	map.connect('/ajax/dev/database/{db_name}/tables', controller="ajax_dev", action="db_tables")
-	map.connect('/ajax/dev/database/{db_name}/table/{table_name}/columns', controller="ajax_dev", action="db_columns")
-	map.connect('/ajax/dev/database/{db_name}/table/{table_name}/drop', controller="ajax_dev", action="drop_table")
+	map.connect('/dev/databases', controller="ajax_dev", action="db_databases")
+	map.connect('/dev/database/{db_name}/tables', controller="ajax_dev", action="db_tables")
+	map.connect('/dev/database/{db_name}/table/{table_name}/columns', controller="ajax_dev", action="db_columns")
+	map.connect('/dev/database/{db_name}/table/{table_name}/drop', controller="ajax_dev", action="drop_table")
 	
-	map.connect('/ajax/dev/routes', controller="ajax_dev", action="routes")
+	map.connect('/dev/routes', controller="ajax_dev", action="routes")
 	
 	##=======================================================================
 	# Map Layers
 	##=======================================================================
 	
-	map.connect('/ajax/map/layers', controller="ajax_map", action="layers_index")
-	map.connect('/ajax/map/layer/{layer}', controller="ajax_map", action="layer_details")
-	map.connect('/ajax/map/layers/tilecache.cfg', controller="ajax_map", action="tilecache_cfg")
-	map.connect('/ajax/map/layers/resources.xml', controller="ajax_map", action="resources_xml")
+	map.connect('/map/layers', controller="ajax_map", action="layers_index")
+	map.connect('/map/layer/{layer}', controller="ajax_map", action="layer_details")
+	map.connect('/map/layers/tilecache.cfg', controller="ajax_map", action="tilecache_cfg")
+	map.connect('/map/layers/resources.xml', controller="ajax_map", action="resources_xml")
 	
 	
 
@@ -82,58 +82,51 @@ def make_map(config):
 	# Ajax MultiPlayer
 	##=======================================================================
 	# MultiPlayer
-	map.connect('/ajax/mpnet/status', controller="ajax_mpnet", action="mpstatus")
+	map.connect('/mpnet/status', controller="ajax_mpnet", action="mpstatus")
 	
-	map.connect('/ajax/bots', controller="ajax_mpnet", action="bots")
-	map.connect('/ajax/bot/{bot_name}/{bot_action}', controller="ajax_mpnet", action="bot")
+	map.connect('/bots', controller="ajax_mpnet", action="bots")
+	map.connect('/bot/{bot_name}/{bot_action}', controller="ajax_mpnet", action="bot")
 	
-	map.connect('/ajax/mpnet/flights/crossfeed', controller="ajax_mpnet", action="crossfeed")
-	map.connect('/ajax/mpnet/flights/telnet/{server}', controller="ajax_mpnet", action="telnet")
-	map.connect('/ajax/mpnet/flights', controller="ajax_mpnet", action="flights")
+	map.connect('/mpnet/flights/crossfeed', controller="ajax_mpnet", action="crossfeed")
+	map.connect('/mpnet/flights/telnet/{server}', controller="ajax_mpnet", action="telnet")
+	map.connect('/mpnet/flights', controller="ajax_mpnet", action="flights")
 		
 	
 	##=======================================================================
 	# Ajax Navaids
 	##=======================================================================
 	# Nav Aids
-	map.connect('/ajax/navaids', controller="ajax_navaids", action="navaids")
+	map.connect('/navaids', controller="ajax_navaids", action="navaids")
 	
-	map.connect('/ajax/fix/{ident}', controller="ajax_navaids", action="fix")
-	map.connect('/ajax/fix', controller="ajax_navaids", action="fix")
+	map.connect('/fix/{ident}', controller="ajax_navaids", action="fix")
+	map.connect('/fix', controller="ajax_navaids", action="fix")
 	
-	map.connect('/ajax/ndb/{ident}', controller="ajax_navaids", action="ndb")
-	map.connect('/ajax/ndb', controller="ajax_navaids", action="ndb")
+	map.connect('/ndb/{ident}', controller="ajax_navaids", action="ndb")
+	map.connect('/ndb', controller="ajax_navaids", action="ndb")
 	
-	map.connect('/ajax/vor/{ident}', controller="ajax_navaids", action="vor")
-	map.connect('/ajax/vor', controller="ajax_navaids", action="vor")
+	map.connect('/vor/{ident}', controller="ajax_navaids", action="vor")
+	map.connect('/vor', controller="ajax_navaids", action="vor")
 	
-	map.connect('/ajax/flightplan/process', controller="ajax_navaids", action="process_flightplan")
+	map.connect('/flightplan/process', controller="ajax_navaids", action="process_flightplan")
 	
 	##=======================================================================
 	# Ajax Users
 	##=======================================================================
 	### Secure
-	map.connect('/ajax/users', controller="ajax_users", action="users")
-	map.connect('/ajax/user/{user_id}', controller="ajax_users", action="user")
+	map.connect('/users', controller="ajax_users", action="users")
+	map.connect('/user/{user_id}', controller="ajax_users", action="user")
 	
-	##=======================================================================
-	# Mobile
-	##=======================================================================
-	map.connect('/m', controller="html_pages", action="mobile")
-	map.connect('/mobile', controller="html_pages", action="mobile")
-	map.connect('/m/{page}', controller="html_pages", action="mobile")
-	map.connect('/mobile/{page}', controller="html_pages", action="mobile")
 	
 	##=======================================================================
 	## HTML Pages
 	##=======================================================================
 	## The css for icons
-	map.connect('/dynamic.{fgx_ver}.css', controller='html_pages', action="dynamic_icons_css")
+	#map.connect('/dynamic.{fgx_ver}.css', controller='html_pages', action="dynamic_icons_css")
 	
 	# TODO
-	map.connect('/admin/users', controller="html_pages", action="admin_users")
+	#map.connect('/admin/users', controller="html_pages", action="admin_users")
 	
-	map.connect('/{page}', controller="html_pages", action="index")
-	map.connect('/', controller="html_pages", action="index")
+	#map.connect('/{page}', controller="html_pages", action="index")
+	#map.connect('/', controller="html_pages", action="index")
 	
 	return map
