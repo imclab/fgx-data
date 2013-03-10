@@ -13,7 +13,6 @@ fgx.egg-info/paster_plugins.txt
 fgx.egg-info/requires.txt
 fgx.egg-info/top_level.txt
 fgx/config/__init__.py
-fgx/config/deployment.ini_tmpl
 fgx/config/environment.py
 fgx/config/middleware.py
 fgx/config/routing.py
@@ -25,10 +24,5 @@ fgx/lib/base.py
 fgx/lib/helpers.py
 fgx/model/__init__.py
 fgx/model/meta.py
-fgx/public/bg.png
 fgx/public/favicon.ico
-fgx/public/index.html
-fgx/public/pylons-logo.gif
 fgx/tests/__init__.py
-fgx/tests/test_models.py
-fgx/tests/functional/__init__.py
