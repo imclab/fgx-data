@@ -2,4 +2,8 @@ Pylons>=1.0.1rc1
 SQLAlchemy>=0.5
 GeoAlchemy>0.7
 gdal
+geojson
+geopy
+Numpy
+PyProj
 shapely
